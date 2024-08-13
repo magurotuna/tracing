@@ -228,7 +228,7 @@ impl From<TryFromIntError> for MyError {
     }
 }
 
-#[instrument(err(Error))]
+#[instrument(err(StdError))]
 fn err_std_error() -> Result<u8, MyError> {
     let v = u8::try_from(1234)?;
     Ok(v)

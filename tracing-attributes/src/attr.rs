@@ -244,10 +244,10 @@ impl Parse for ErrArgs {
                 match ident.to_string().as_str() {
                     "Debug" => result.mode = ErrFormatMode::Debug,
                     "Display" => result.mode = ErrFormatMode::Display,
-                    "Error" => result.mode = ErrFormatMode::StdError,
+                    "StdError" => result.mode = ErrFormatMode::StdError,
                     _ => return Err(syn::Error::new(
                         ident.span(),
-                        "unknown event formatting mode, expected `Debug`, `Display`, or `Error`",
+                        "unknown event formatting mode, expected `Debug`, `Display`, or `StdError`",
                     )),
                 }
             }

@@ -489,12 +489,12 @@ mod expand;
 /// }
 /// ```
 ///
-/// Also, an error that implements `std::error::Error` can be recorded in a way that may preserve
-/// the chain of causes by writing `err(Error)`:
+/// Also, an error that implements `std::error::Error` can be recorded in a way that preserves
+/// the chain of causes by writing `err(StdError)`:
 ///
 /// ```
 /// # use tracing_attributes::instrument;
-/// #[instrument(err(Error))]
+/// #[instrument(err(StdError))]
 /// fn my_function(arg: usize) -> Result<(), std::io::Error> {
 ///     Ok(())
 /// }
